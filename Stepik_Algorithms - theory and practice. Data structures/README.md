@@ -7,23 +7,23 @@
 _______________
 >![2.1](img/2.1.png)
 
-[Решение 2.1](2.1_Brackets_in_code/2.1_Brackets_in_code.go)
+✅ [Решение 2.1](2.1_Brackets_in_code/2.1_Brackets_in_code.go)
 _____________________
 >![2.2](img/2.2.png)
 
-[Решение 2.2](2.2_Height_of_tree/2.2_Height_of_tree.go)
+✅ [Решение 2.2](2.2_Height_of_tree/2.2_Height_of_tree.go)
 ___________________________
 >![2.3](img/2.3.png)
 
-:white_check_mark: [Решение 2.3](2.3_Processing_Network_Packages/2.3_Processing_Network_Packages.go)
+✅ [Решение 2.3](2.3_Processing_Network_Packages/2.3_Processing_Network_Packages.go)
 _______________________
 
 >![2.4](img/2.4.png)
 
-:white_large_square: [Решение ]()
+⬜ [Решение 2.4]()
 _______________________
 
 >![2.5](img/2.5.png)
 
-[Решение ]()
+⬜ [Решение 2.5]()
 __________________
