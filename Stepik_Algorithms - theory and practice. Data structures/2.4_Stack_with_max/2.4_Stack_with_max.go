@@ -1,1 +1,1 @@
-package __4_Stack_with_max
+package main
