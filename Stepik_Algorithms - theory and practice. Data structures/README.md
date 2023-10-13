@@ -34,11 +34,11 @@ __________________
 __________________
 >![3.1](img/3.1.png)
 
-⬜ [Решение 3.1](3.1_Heap_building/3.1_Heap_building.go)
+✅ [Решение 3.1](3.1_Heap_building/3.1_Heap_building.go)
 _____________________
 >![3.2](img/3.2.png)
 
-⬜ [Решение 3.2](3.2_Parellel_processing/3.2_Parellel_processing.go)
+✅ [Решение 3.2](3.2_Parellel_processing/3.2_Parellel_processing.go)
 ___________________________
 #### §4 Системы непересекающихся множеств
 _________________________
