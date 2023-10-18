@@ -49,7 +49,7 @@ _______________________
 
 >![4.2](img/4.2.png)
 
-⬜ [Решение 4.2](4.2_Automatic_program_analysis/4.2_Automatic_program_analysis.go)
+✅ [Решение 4.2](4.2_Automatic_program_analysis/4.2_Automatic_program_analysis.go)
 _______________________
 #### §5 Хеш-таблицы
 _______________________
