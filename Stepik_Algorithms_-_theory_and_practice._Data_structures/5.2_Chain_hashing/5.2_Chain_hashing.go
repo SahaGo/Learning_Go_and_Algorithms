@@ -1,17 +1,18 @@
+// не проходит 7 тест, все примеры ввода отображаются коректно,
+// вариант решения - переписать со структурой[][]string
 package main
 
 import (
 	"bufio"
 	"fmt"
-	"math"
 	"os"
 	"strconv"
 	"strings"
 )
 
 const (
-	p int64   = 1000000007
-	x float64 = 263
+	p uint64 = 1000000007
+	x uint64 = 263
 )
 
 var (
@@ -20,10 +21,10 @@ var (
 )
 
 type Dictionary struct {
-	record map[string][]string
+	record map[uint64][]string
 }
 
-func (d *Dictionary) AddString(str string, m int64) {
+func (d *Dictionary) AddString(str string, m uint64) {
 	hash := HashFunc(str, m)
 	if v, ok := d.record[hash]; ok {
 		for _, val := range v { // если повтор, то игнорим
@@ -40,13 +41,14 @@ func (d *Dictionary) AddString(str string, m int64) {
 	return
 }
 
-func (d *Dictionary) DeleteString(str string, m int64) {
+func (d *Dictionary) DeleteString(str string, m uint64) {
 	hash := HashFunc(str, m)
 
 	if v, ok := d.record[hash]; ok {
 
 		if len(d.record[hash]) == 1 { //если у нас только один элемент по хеш-ключу, то удаляем его
-			d.record[hash] = make([]string, 0)
+			//d.record[hash] = make([]string, 0)
+			delete(d.record, hash)
 			return
 		} else { // иначе перебираем слайс
 			var ind int               // ind - индекс удаляемого элемента
@@ -62,64 +64,59 @@ func (d *Dictionary) DeleteString(str string, m int64) {
 	return
 }
 
-func (d *Dictionary) FindString(str string, m int64) {
+func (d *Dictionary) FindString(str string, m uint64) bool {
 	hash := HashFunc(str, m)
 
 	if v, ok := d.record[hash]; ok {
 		for _, val := range v {
 			if val == str {
-				fmt.Fprintln(Out, "yes")
-				return
+				return true
 			}
 		}
 	}
-	fmt.Fprintln(Out, "\nno")
-	return
+	return false
 }
 
-func (d *Dictionary) CheckI(i string) {
+func (d *Dictionary) CheckI(i uint64) []string {
 	if v, ok := d.record[i]; ok {
-		if len(d.record[i]) == 0 {
-			fmt.Fprint(Out, "\n")
-		}
-		for k, val := range v {
-			if k == 0 {
-				fmt.Fprint(Out, "\n")
-			}
-			fmt.Fprint(Out, val, " ")
-		}
+		return v
 	}
+	return nil
 }
 
 func CreateDictionary() Dictionary {
 	d := Dictionary{}
-	d.record = make(map[string][]string)
+	d.record = make(map[uint64][]string)
 	return d
 }
 
-func HashFunc(str string, m int64) string {
-	var hashSum int64
-	for i, v := range str {
-		hashSum = hashSum + (int64(v)*int64(math.Pow(x, float64(i))))%p
-		//fmt.Fprintln(Out, "\nhashing: v = ", v, ", x = ", x, ", i = ", i)
+func HashFunc(str string, m uint64) uint64 {
+	var hashSum uint64
+
+	var pow uint64 = 1
+	for _, v := range str {
+
+		hashSum = hashSum + (uint64(v) * pow)
+		hashSum = (hashSum%p + p) % p
+		pow = (pow * x) % p
 	}
 	hashSum = hashSum % p % m
 
-	return strconv.Itoa(int(hashSum))
+	return hashSum
 }
 
 type Methods interface {
-	AddString(string, int64)
-	DeleteString(string, int64)
-	FindString(string, int64)
-	CheckI(string)
+	AddString(string, uint64)
+	DeleteString(string, uint64)
+	FindString(string, uint64) bool
+	CheckI(uint64) []string
 }
 
 func main() {
 	defer Out.Flush()
 	Scan.Scan()
 	mInt, _ := strconv.Atoi(Scan.Text())
-	m := int64(mInt)
+	m := uint64(mInt)
 	Scan.Scan()
 	request, _ := strconv.Atoi(Scan.Text())
 
@@ -137,10 +134,17 @@ func main() {
 		case "del":
 			dict.DeleteString(str, m)
 		case "check":
-			dict.CheckI(str)
+			strConverted, _ := strconv.ParseUint(str, 10, 64)
+			res := dict.CheckI(strConverted)
+
+			fmt.Fprintln(Out, strings.Join(res, " "))
+
 		case "find":
-			dict.FindString(str, m)
+			if dict.FindString(str, m) {
+				fmt.Fprintln(Out, "yes")
+			} else {
+				fmt.Fprintln(Out, "no")
+			}
 		}
-		//fmt.Fprintln(Out, "\nTest - ", i+1, ": ", buff[0], dict)
 	}
 }
