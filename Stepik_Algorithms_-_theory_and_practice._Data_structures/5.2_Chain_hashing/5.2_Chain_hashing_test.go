@@ -8,7 +8,7 @@ import (
 // тест хеш-функции со значеениями из комментариев
 func TestHashFunc(t *testing.T) {
 	assert := assert2.New(t)
-	var m int64 = 5
+	var m uint64 = 5
 	assert.Equal("4", HashFunc("world", m), "should be equal")
 	assert.Equal("4", HashFunc("HellO", m), "should be equal")
 	assert.Equal("2", HashFunc("luck", m), "should be equal")

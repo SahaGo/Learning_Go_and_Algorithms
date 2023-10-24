@@ -1,1 +1,5 @@
-package __3_Search_for_a_pattern
+package main
+
+func main() {
+
+}
