@@ -11,8 +11,8 @@ import (
 )
 
 const (
-	p uint64 = 1000000007
-	x uint64 = 263
+	p int64 = 1000000007
+	x int64 = 263
 )
 
 var (
@@ -21,10 +21,10 @@ var (
 )
 
 type Dictionary struct {
-	record map[uint64][]string
+	record map[int64][]string
 }
 
-func (d *Dictionary) AddString(str string, m uint64) {
+func (d *Dictionary) AddString(str string, m int64) {
 	hash := HashFunc(str, m)
 	if v, ok := d.record[hash]; ok {
 		for _, val := range v { // если повтор, то игнорим
@@ -41,7 +41,7 @@ func (d *Dictionary) AddString(str string, m uint64) {
 	return
 }
 
-func (d *Dictionary) DeleteString(str string, m uint64) {
+func (d *Dictionary) DeleteString(str string, m int64) {
 	hash := HashFunc(str, m)
 
 	if v, ok := d.record[hash]; ok {
@@ -64,7 +64,7 @@ func (d *Dictionary) DeleteString(str string, m uint64) {
 	return
 }
 
-func (d *Dictionary) FindString(str string, m uint64) bool {
+func (d *Dictionary) FindString(str string, m int64) bool {
 	hash := HashFunc(str, m)
 
 	if v, ok := d.record[hash]; ok {
@@ -77,7 +77,7 @@ func (d *Dictionary) FindString(str string, m uint64) bool {
 	return false
 }
 
-func (d *Dictionary) CheckI(i uint64) []string {
+func (d *Dictionary) CheckI(i int64) []string {
 	if v, ok := d.record[i]; ok {
 		return v
 	}
@@ -86,17 +86,17 @@ func (d *Dictionary) CheckI(i uint64) []string {
 
 func CreateDictionary() Dictionary {
 	d := Dictionary{}
-	d.record = make(map[uint64][]string)
+	d.record = make(map[int64][]string)
 	return d
 }
 
-func HashFunc(str string, m uint64) uint64 {
-	var hashSum uint64
+func HashFunc(str string, m int64) int64 {
+	var hashSum int64
 
-	var pow uint64 = 1
+	var pow int64 = 1
 	for _, v := range str {
 
-		hashSum = hashSum + (uint64(v) * pow)
+		hashSum = hashSum + (int64(v) * pow)
 		hashSum = (hashSum%p + p) % p
 		pow = (pow * x) % p
 	}
@@ -106,17 +106,17 @@ func HashFunc(str string, m uint64) uint64 {
 }
 
 type Methods interface {
-	AddString(string, uint64)
-	DeleteString(string, uint64)
-	FindString(string, uint64) bool
-	CheckI(uint64) []string
+	AddString(string, int64)
+	DeleteString(string, int64)
+	FindString(string, int64) bool
+	CheckI(int64) []string
 }
 
 func main() {
 	defer Out.Flush()
 	Scan.Scan()
 	mInt, _ := strconv.Atoi(Scan.Text())
-	m := uint64(mInt)
+	m := int64(mInt)
 	Scan.Scan()
 	request, _ := strconv.Atoi(Scan.Text())
 
@@ -134,7 +134,7 @@ func main() {
 		case "del":
 			dict.DeleteString(str, m)
 		case "check":
-			strConverted, _ := strconv.ParseUint(str, 10, 64)
+			strConverted, _ := strconv.ParseInt(str, 10, 64)
 			res := dict.CheckI(strConverted)
 
 			fmt.Fprintln(Out, strings.Join(res, " "))
