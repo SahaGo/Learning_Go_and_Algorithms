@@ -69,7 +69,7 @@ _______________________
 _______________________
 >![6.1](img/6.1.png)
 
-⬜ [Решение 6.1](6.1_Binary_tree_traversal/6.1_Binary_tree_traversal.go)
+✅ [Решение 6.1](6.1_Binary_tree_traversal/6.1_Binary_tree_traversal.go)
 _______________________
 >![6.2](img/6.2.png)
 
