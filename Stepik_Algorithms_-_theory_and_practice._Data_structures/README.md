@@ -74,11 +74,11 @@ _______________________
 _______________________
 >![6.2](img/6.2.png)
 
-⬜ [Решение 6.2](6.2_Checking_tree_properties/6.2_Checking_tree_properties.go)
+✅ [Решение 6.2](6.2_Checking_tree_properties/6.2_Checking_tree_properties.go)
 _______________________
 >![6.3](img/6.3.png)
 
-⬜ [Решение 6.3](6.3_Checking__general_properties/6.3_Checking__general_properties.go)
+✅ [Решение 6.3](6.3_Checking__general_properties/6.3_Checking__general_properties.go)
 _______________________
 >![6.4](img/6.4.png)
 
