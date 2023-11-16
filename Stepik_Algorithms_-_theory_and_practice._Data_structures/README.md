@@ -82,7 +82,7 @@ _______________________
 _______________________
 >![6.4](img/6.4.png)
 
-⬜ [Решение 6.4](6.4_Set_with_sum_requests/6.4_Set_with_sum_requests.go)
+✅ [Решение 6.4](6.4_Set_with_sum_requests/6.4_Set_with_sum_requests.go)
 _______________________
 >![6.5](img/6.5.png)
 
