@@ -7,7 +7,6 @@ import (
 //uint8 == byte -> true !!!
 
 const (
-	empty    byte = 0
 	occupied byte = 1
 	r        byte = 'R'
 	b        byte = 'B'
@@ -17,11 +16,6 @@ type char struct {
 	typ uint8
 	i   int
 	j   int
-}
-
-type coord struct {
-	i int
-	j int
 }
 
 type square struct {
