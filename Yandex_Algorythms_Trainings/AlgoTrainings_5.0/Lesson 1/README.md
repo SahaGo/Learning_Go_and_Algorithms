@@ -1,4 +1,5 @@
-### [Тренировки по алгоритмам 5.0 от Яндекса — Занятие 1 (Сложность, тестирование, особые случаи)](https://contest.yandex.ru/contest/59539/enter/?retPage=)
+### Тренировки по алгоритмам 5.0 от Яндекса — Занятие 1 (Сложность, тестирование, особые случаи)
+[***Ссылка на контест***](https://contest.yandex.ru/contest/59539/enter/?retPage=)
 
 A. ✔️ [Покраска деревьев](A_Trees_painting/A_Trees_painting.go)    
 B. ✔️ [Футбольный комментатор](B_Soccer_score/B_Soccer_score.go)   
