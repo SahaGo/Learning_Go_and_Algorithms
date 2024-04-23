@@ -1,7 +1,9 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
+	"os"
 	"sort"
 )
 
@@ -11,25 +13,33 @@ type data struct {
 	i    int
 }
 
+var (
+	In  = bufio.NewReader(os.Stdin)
+	Out = bufio.NewWriter(os.Stdout)
+)
+
 func main() {
+
+	defer Out.Flush()
+
 	var count int
 	var up, down int64
-	fmt.Scanln(&count)
-	good := make([]data, 0)
-	bad := make([]data, 0)
+	fmt.Fscanln(In, &count)
+	good := make([]data, 0, count)
+	bad := make([]data, 0, count)
 
-	//maxIndAbad := -1
+	indUpBad := -1
 	//maxIndBgood := -1
 	var maxGoodDown, maxBadUp int64
 	for i := 0; i < count; i++ {
-		fmt.Scanln(&up, &down)
+		fmt.Fscanln(In, &up, &down)
 		if up-down < 0 {
 
 			bad = append(bad, data{up: up, down: down, i: i + 1})
 
 			if up > maxBadUp {
-				//maxIndAbad = len(bad) - 1
 				maxBadUp = up
+				indUpBad = len(bad) - 1
 			}
 
 		} else {
@@ -42,9 +52,9 @@ func main() {
 		}
 	}
 
-	res1, sum, lastSortedGoodDown := variant1(good, bad)
+	res1, sum, lastSortedGoodDown := variant1(good, bad, count)
 
-	res2, sumWithBadUp := variant2(good, bad, sum, lastSortedGoodDown)
+	res2, sumWithBadUp := variant2(good, bad, sum, lastSortedGoodDown, count, indUpBad)
 
 	if sum > sumWithBadUp {
 		printAnswer(sum, res1)
@@ -59,20 +69,22 @@ func main() {
 
 func printAnswer(sum int64, res []data) {
 
-	fmt.Println(sum)
+	fmt.Fprintln(Out, sum)
 
 	for i := 0; i < len(res); i++ {
 		if i == len(res)-1 {
-			fmt.Print(res[i].i)
+			fmt.Fprint(Out, res[i].i)
 		} else {
-			fmt.Print(res[i].i, " ")
+			fmt.Fprint(Out, res[i].i, " ")
 		}
 	}
 }
 
-func variant1(good, bad []data) ([]data, int64, int64) {
-
-	res1 := make([]data, 0)
+func variant1(good, bad []data, count int) ([]data, int64, int64) {
+	if len(good) == 0 {
+		return nil, 0, 0
+	}
+	res1 := make([]data, 0, count/2)
 	var sum int64
 
 	res1 = append(res1, good...)
@@ -95,22 +107,21 @@ func variant1(good, bad []data) ([]data, int64, int64) {
 	return res1, sum, lastDown
 }
 
-func variant2(good, bad []data, sum int64, lastSortedGoodDown int64) ([]data, int64) {
+func variant2(good, bad []data, sum int64, lastSortedGoodDown int64, count int, indUpBad int) ([]data, int64) {
+	if len(bad) == 0 {
+		return bad, -1
+	}
 	sumFor2Variant := sum
-	res2 := make([]data, 0)
+	res2 := make([]data, 0, count/2)
 	res2 = append(res2, good...)
 
-	sort.Slice(bad, func(i, j int) bool {
-		if bad[i].up >= bad[j].up {
-			return true
-		}
-		return false
-	})
+	res2 = append(res2, bad[indUpBad])
 
 	if len(bad) != 0 {
-		sumFor2Variant += bad[0].up
+		sumFor2Variant += bad[indUpBad].up
 	}
 	sumFor2Variant -= lastSortedGoodDown
+	bad = append(bad[:indUpBad], bad[indUpBad+1:]...)
 	res2 = append(res2, bad...)
 	return res2, sumFor2Variant
 }
