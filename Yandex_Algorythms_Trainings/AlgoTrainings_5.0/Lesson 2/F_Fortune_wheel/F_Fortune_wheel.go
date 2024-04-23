@@ -37,6 +37,9 @@ func main() {
 	maxRouletteNum := math.MinInt
 	for i := a; i <= b; i++ {
 		res := i / k
+		if i%k == 0 {
+			res--
+		}
 		ind := res % count
 		if i == k {
 			ind = 0
