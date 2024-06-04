@@ -10,4 +10,4 @@ F. 👩‍💻[Колесо Фортуны](F_Fortune_wheel/F_Fortune_wheel.go)(
 G. ✔️[Ни больше ни меньше](G_No_more_no_less/G_No_more_no_less.go)     
 H. ✔️[Наилучший запрет](H_Better_forbiddance/H_Better_forbiddance.go)     
 I. ✔️[Пираты Баренцева моря](I_Pirates_of_the_Barents_Sea/I_Pirates_of_the_Barents_Sea.go)   
-J. 👩‍💻[Два прямоугольника]()
+J. ✔️[Два прямоугольника](J_Two_squares/J_Two_squares.go)
