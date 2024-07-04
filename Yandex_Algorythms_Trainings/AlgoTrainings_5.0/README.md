@@ -5,7 +5,7 @@
 06.03 Лекция 2: Линейный поиск ([Трансляция](https://www.youtube.com/watch?v=7P4yu7rQADI), [-> Занятие 2](Lesson%202))     
 12.03 Разбор задач первой лекции ([Трансляция](https://www.youtube.com/watch?v=IesJVRj-Q40&t=3426s))       
 13.03 Собеседование по алгоритмам в прямом эфире + его разбор ([Трансляция](https://www.youtube.com/watch?v=dRHexm-A9yc))       
-15.03 Лекция 3: Множества и словари ([Трансляция](https://www.youtube.com/watch?v=jQOnYzW8ZOE), [-> Занятие](Lesson%203))        
+15.03 Лекция 3: Множества и словари ([Трансляция](https://www.youtube.com/watch?v=jQOnYzW8ZOE), [-> Занятие 3](Lesson%203))        
 20.03 Разбор задач второй лекции ([Трансляция](https://www.youtube.com/watch?v=PyLX9vzrwqY))       
 22.03 Лекция 4: Бинарный поиск ([Трансляция](https://www.youtube.com/watch?v=-B6xvDeGyPg))     
 27.03 Разбор задач третьей лекции ([Трансляция](https://www.youtube.com/watch?v=GQdvaoPxbZE))          
