@@ -4,7 +4,7 @@
 A. ✔️ [Плейлисты](A_Playlists/A_Playlists.go)    
 B. ✔️ [Анаграмма?](B_Anagramm/B_Anagramm.go)    
 C. ✔️ [Удаление чисел](C_Numbers_deleting/C_Numbers_deleting.go)      
-D. ⬜  [Повторяющееся число]()     
+D. ✔️ [Повторяющееся число](D_Repeating_number/D_Repeating_number.go)     
 E. ⬜  [Два из трех]()  
 F. ⬜  [Замена слов]()    
 G. ⬜  [Построить квадрат]()    
