@@ -3,7 +3,7 @@
 
 A. ✔️ [Плейлисты](A_Playlists/A_Playlists.go)    
 B. ✔️ [Анаграмма?](B_Anagramm/B_Anagramm.go)    
-C. ⬜  [Удаление чисел]()      
+C. ✔️ [Удаление чисел](C_Numbers_deleting/C_Numbers_deleting.go)      
 D. ⬜  [Повторяющееся число]()     
 E. ⬜  [Два из трех]()  
 F. ⬜  [Замена слов]()    
