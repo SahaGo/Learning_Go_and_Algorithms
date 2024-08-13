@@ -7,7 +7,7 @@ C. ✔️ [Удаление чисел](C_Numbers_deleting/C_Numbers_deleting.go
 D. ✔️ [Повторяющееся число](D_Repeating_number/D_Repeating_number.go)     
 E. ✔️ [Два из трех](E_2_from_3/E_2_from_3.go)  
 F. ✔️ [Замена слов](F_Words_transform/F_Words_transform.go)    
-G. ⬜  [Построить квадрат]()    
+G. ✔️ [Построить квадрат](G_Make_square/G_Make_square.go)    
 H. ⬜  [Спички детям не игрушка!]()                     
 I. ⬜  [Играйте в футбол!]()    
 J. ⬜  [Р2Р обновление]()
