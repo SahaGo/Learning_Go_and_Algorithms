@@ -8,7 +8,7 @@ D. ✔️ [Повторяющееся число](D_Repeating_number/D_Repeating
 E. ✔️ [Два из трех](E_2_from_3/E_2_from_3.go)  
 F. ✔️ [Замена слов](F_Words_transform/F_Words_transform.go)    
 G. ✔️ [Построить квадрат](G_Make_square/G_Make_square.go)    
-H. ⬜  [Спички детям не игрушка!]()                     
+H. ✔️ [Спички детям не игрушка!](H_Matches_are_not_a_game/H_Matches_are_not_a_game.go)                     
 I. ⬜  [Играйте в футбол!]()    
 J. ⬜  [Р2Р обновление]()
 
