@@ -4,7 +4,7 @@
 A. ✔️ [Быстрый поиск в массиве](A_Binary_search/A_Binary_search.go)        
 B. ⬜ [Одномерный морской бой]()            
 C. ✔️ [Саруман](C_Rainbow_Saruman/C_Rainbow_Saruman.go)           
-D. ⬜ [Рапорт]()        
+D. ✔️ [Рапорт](D_Report/D_Report.go)        
 E. ⬜ [Нумерация дробей]()        
 F. ⬜ [Велодорожки]()     
 G. ⬜ [Новый офис плюса]()     
